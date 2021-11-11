@@ -2,13 +2,7 @@ import './App.css';
 import Data from './components/Data/Data.json'
 import Header from './components/Header/Header';
 
-
-//const product = Data;
-
 const App = () => {
-
-
-
   return (
     <div className="app">
 
