@@ -1,0 +1,11 @@
+.Layout{
+    display: flex;
+}
+.filter__layout{
+    flex: 0.2;
+    background-color: rgb(34, 58, 168);
+}
+.card__layout{
+    flex: 0.8;
+    
+}

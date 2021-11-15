@@ -1,25 +1,23 @@
 import './App.css';
-import Data from './components/Data/Data.json'
 import Header from './components/Header/Header';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import HomePage from './components/HomePage/HomePage';
+//import Cart from './components/Cart/Cart';
+//import Login from './components/Login'
+
+
 
 const App = () => {
   return (
     <div className="app">
-
-      <Header />
-      <h1 className="title_product">
-        {Data.map((post) =>
-        (
-          <h4 >{post.title}</h4>
-        )
-        )}
-      </h1>
-      {Data.map((post) =>
-      (
-        <img src={post.filename} alt={post.title} />
-      ))
-
-      }
+      <Router>
+        <Header />
+        {/* <Switch> */}
+        {/* <Route to="/" exact > */}
+        <HomePage />
+        {/* </Route> */}
+        {/* </Switch> */}
+      </Router>
     </div>
   );
 }

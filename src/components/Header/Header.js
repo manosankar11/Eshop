@@ -6,14 +6,14 @@ import './Header.css';
 import Logo from '../Logo/logo';
 import Search from '../Search';
 
-const Header = () => {
+const Header = ({post}) => {
     const [isOpen, setIsOpen] =useState(false);
 
     return (
         <div className="header">
             <Logo />
             <div className="Search_align">
-                <Search />
+                <Search post={post}/>
             </div>
             <div className="menu">
                 <div className="web-menu"><Web /></div>
