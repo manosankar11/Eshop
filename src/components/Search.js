@@ -1,29 +1,26 @@
 import React, { useState } from 'react'
+import { FormControl } from 'react-bootstrap';
 import './Search.css';
-import Data from './Data/Data.json'
-const Search = ({ post }) => {
-  // const [timeoutId, updateTimeoutId] = useState();
-  // const [searchTerm, setSearchTerm] = useState('')
 
-  // const onTextChange = (event) => {
-  //   clearTimeout(timeoutId)
-  //   const timeout = setTimeout(() => console.log("ramshiva"), 500);
-  //   updateTimeoutId(timeout)
-  // };
+
+
+const Search = ({ productDispatch }) => {
+  
   return (
-    <div className="search__input">
-      <input type="text" placeholder="Search Products"  />
-      {/* {Data.filter((post) => {
-        if (searchTerm == "") {
-          return post
-        }////onChange={e => setSearchTerm(e.target.value)}/////
-        else if (post.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-          return post;
-        }
-      }).map((post, key) => {
-        return <div>{post.title} </div>
-      })} */}
-
+    <div>
+       <FormControl
+              style={{ width: 500 }}
+              type="search"
+              placeholder="Search a product..."
+              className="m-auto"
+              aria-label="Search"
+              onChange={(e) => {
+                productDispatch({
+                  type: "FILTER_BY_SEARCH",
+                  payload: e.target.value,
+                });
+              }}
+            /> 
     </div>
   )
 }

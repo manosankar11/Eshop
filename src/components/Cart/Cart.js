@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap";
-import { AiFillDelete } from "react-icons/ai";
 import { CartState } from "../context/Context";
-import Rating from "./Rating";
-import "./styles.css";
+import Rating from "../CardContainer/Rating/Rating";
+import "./Cart.css"
+import CardImage from "../CardContainer/CardImage/CardImage"
+import CardTitle from "../CardContainer/CardTitle/CardTitle"
+import DeleteIcon from "./DeleteIcon";
+import CardPrice from "../CardContainer/CardPrice/CardPrice";
+
 
 const Cart = () => {
   const {
@@ -26,12 +30,13 @@ const Cart = () => {
             <ListGroup.Item key={prod.id}>
               <Row>
                 <Col md={2}>
-                  <Image src={prod.image} alt={prod.name} fluid rounded />
+
+                  <CardImage prod={prod} fluid rounded />
                 </Col>
                 <Col md={2}>
-                  <span>{prod.name}</span>
+                  <span><CardTitle prod={prod} /></span>
                 </Col>
-                <Col md={2}>₹ {prod.price}</Col>
+                <Col md={2}>₹ <CardPrice prod={prod}/></Col>
                 <Col md={2}>
                   <Rating rating={prod.ratings} />
                 </Col>
@@ -55,18 +60,7 @@ const Cart = () => {
                   </Form.Control>
                 </Col>
                 <Col md={2}>
-                  <Button
-                    type="button"
-                    variant="light"
-                    onClick={() =>
-                      dispatch({
-                        type: "REMOVE_FROM_CART",
-                        payload: prod,
-                      })
-                    }
-                  >
-                    <AiFillDelete fontSize="20px" />
-                  </Button>
+                   <DeleteIcon prod={prod} dispatch={dispatch} />
                 </Col>
               </Row>
             </ListGroup.Item>

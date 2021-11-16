@@ -1,9 +1,10 @@
 import React from 'react'
+import { Card } from 'react-bootstrap'
 
 const CardTitle = ({prod}) => {
     return (
         <div>
-               <h4>{prod.name}</h4>
+              <Card.Title>{prod.name}</Card.Title>
         </div>
     )
 }

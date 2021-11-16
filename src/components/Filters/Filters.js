@@ -1,15 +1,14 @@
 import { Button, Form } from "react-bootstrap";
 import { CartState } from "../context/Context";
-import Rating from "./Rating";
+import Rating from "../CardContainer/Rating/Rating";
+import FilterClear from "./FilterClear"
+
 
 const Filters = () => {
   const {
     productDispatch,
     productState: { byStock, byFastDelivery, sort, byRating },
   } = CartState();
-
-  // make state for rating
-
   return (
     <div className="filters">
       <span className="title">Filter Products</span>
@@ -88,16 +87,7 @@ const Filters = () => {
           style={{ cursor: "pointer" }}
         />
       </span>
-      <Button
-        variant="light"
-        onClick={() =>
-          productDispatch({
-            type: "CLEAR_FILTERS",
-          })
-        }
-      >
-        Clear Filters
-      </Button>
+      <FilterClear productDispatch={productDispatch} />
     </div>
   );
 };
