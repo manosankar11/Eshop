@@ -1,5 +1,5 @@
 import { Button, Form } from "react-bootstrap";
-import { CartState } from "../context/Context";
+import { CartState } from "../components/context/Context";
 import Rating from "./Rating";
 
 const Filters = () => {

@@ -1,24 +1,27 @@
-import './App.css';
-import Header from './components/Header/Header';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import HomePage from './components/HomePage/HomePage';
-//import Cart from './components/Cart/Cart';
-//import Login from './components/Login'
-
-
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+import LoginPage from "./components/Login/Login";
+import Register from "./components/Register/Register";
 
 const App = () => {
   return (
-    <div className="app">
+    <>
       <Router>
         <Header />
-        {/* <Switch> */}
-        {/* <Route to="/" exact > */}
-        <HomePage />
-        {/* </Route> */}
-        {/* </Switch> */}
+        <div className="App">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>
       </Router>
-    </div>
+    </>
   );
 }
 

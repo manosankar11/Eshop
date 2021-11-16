@@ -28,7 +28,6 @@ const CardContainer = () => {
                     <div className="product__title">
                         <CardTitle prod={prod} />
                     </div>
-
                     <div>
                         {prod.fastDelivery ? (
                             <div>Fast Delivery</div>

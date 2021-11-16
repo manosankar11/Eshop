@@ -1,4 +1,4 @@
-import { CartState } from "../context/Context";
+import { CartState } from "../components/context/Context";
 import Filters from "./Filters";
 import SingleProduct from "./SingleProduct";
 
