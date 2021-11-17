@@ -1,4 +1,4 @@
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { CartState } from "../components/context/Context";
 import CardImage from "../components/CardContainer/CardImage/CardImage"
 import CardTitle from "../components/CardContainer/CardTitle/CardTitle"
@@ -22,7 +22,7 @@ const SingleProduct = ({ prod }) => {
           {cart.some((p) => p.id === prod.id) ? (
             <RemoveCart prod={prod} dispatch={dispatch} />
           ) : (
-            <AddCart prod={prod} dispatch={dispatch}/>
+            <AddCart prod={prod} dispatch={dispatch} />
           )}
         </Card.Body>
       </Card>

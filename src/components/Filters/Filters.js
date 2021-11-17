@@ -1,4 +1,4 @@
-import { Button, Form } from "react-bootstrap";
+import {  Form } from "react-bootstrap";
 import { CartState } from "../context/Context";
 import Rating from "../CardContainer/Rating/Rating";
 import FilterClear from "./FilterClear";

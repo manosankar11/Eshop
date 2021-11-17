@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap";
+import { Button, Col, Form, ListGroup, Row } from "react-bootstrap";
 import { CartState } from "../context/Context";
 import Rating from "../CardContainer/Rating/Rating";
 import "./Cart.css"
@@ -37,7 +37,7 @@ const Cart = () => {
                 <Col md={2}>
                   <span><CardTitle prod={prod} /></span>
                 </Col>
-                <Col md={2}>₹ <CardPrice prod={prod}/></Col>
+                <Col md={2}>₹ <CardPrice prod={prod} /></Col>
                 <Col md={2}>
                   <Rating rating={prod.ratings} />
                 </Col>
@@ -61,7 +61,7 @@ const Cart = () => {
                   </Form.Control>
                 </Col>
                 <Col md={2}>
-                   <DeleteIcon prod={prod} dispatch={dispatch} />
+                  <DeleteIcon prod={prod} dispatch={dispatch} />
                 </Col>
               </Row>
             </ListGroup.Item>

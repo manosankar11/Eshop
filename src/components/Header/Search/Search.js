@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { FormControl } from 'react-bootstrap';
 import './Search.css';
 

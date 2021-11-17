@@ -13,8 +13,8 @@ const App = () => {
   return (
     <>
       <Router>
-        {window.location.pathname !== '/login' ? <Header /> : null}
-        {/* <Header /> */}
+        {/* {window.location.pathname !== '/login' ? <Header /> : null} */}
+        <Header />
         <div className="App">
           <Routes>
             <Route exact path="/" element={<HomePage />} />
