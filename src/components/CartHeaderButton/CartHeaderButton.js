@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaShoppingCart } from "react-icons/fa";
-import { AiFillDelete } from "react-icons/ai";
+
 import {
   Badge,
   Dropdown,
@@ -8,6 +8,7 @@ import {
 //import { Link } from "react-router-dom";
 import GoToCartBtn from '../GoToCartBtn/GoToCartBtn';
 import DeleteIcon from '../Cart/DeleteIcon';
+import "../styles.css"
 
 
 const CartHeaderButton = ({cart,dispatch}) => {

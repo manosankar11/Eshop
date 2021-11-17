@@ -1,20 +1,19 @@
 .search__input{
-    width: auto;
-
-    height: auto;
+  width: auto;
+  height: auto;
 }
 
 .search__input input[type=text] {
-    float: left;
-    padding: 6px;
-    border: 1px solid #ccc;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-  }
+  float: left;
+  padding: 6px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
   
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .search__input a, .search__input input[type=text] {
       float: none;
       display: block;
@@ -25,5 +24,5 @@
     }
     .search__input input[type=text] {
       border: 1px solid #ccc;
-    }
   }
+}

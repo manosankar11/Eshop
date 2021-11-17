@@ -1,31 +1,54 @@
-import React, { useState } from 'react'
-import Web from './Web/Web'
-import Mobile from './Mobile/Mobile'
-import { CgMenuRound } from 'react-icons/cg'
-import './Header.css';
-import Logo from '../Logo/logo';
-import Search from '../Search';
+import {Container, Dropdown,Nav,Navbar} from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
+import { CartState } from "../context/Context";
+// import "../style.css";
+import Logo from "../Logo/logo";
+import CartHeaderButton from "../CartHeaderButton/CartHeaderButton";
+import Search from "../Header/Search/Search";
+import './Header.css'
 
-const Header = ({post}) => {
-    const [isOpen, setIsOpen] =useState(false);
 
-    return (
-        <div className="header">
+const Header = () => {
+  const {
+    state: { cart },
+    dispatch,
+    productDispatch,
+  } = CartState();
+
+  return (
+    <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
+      <Container>
+        <Navbar.Brand style={{ textDecoration: "None" }}>
+          <Link to="/">
             <Logo />
-            <div className="Search_align">
-                <Search post={post}/>
-            </div>
-            <div className="menu">
-                <div className="web-menu"><Web /></div>
-                <div className="mobile-menu">
-                   <div className="menu-icon" onClick={()=>setIsOpen(!isOpen)}>
-                       <CgMenuRound />
-                    </div>
-                    {isOpen && <Mobile setIsOpen={setIsOpen} isOpen={isOpen} /> }
-                </div>
-            </div>
-        </div>
-    );
+          </Link>
+        </Navbar.Brand>
+
+
+        {useLocation().pathname.split("/")[1] !== "cart" && (
+          <Navbar.Text className="search">
+            <Search productDispatch={productDispatch} />
+          </Navbar.Text>
+        )}
+        <Nav>
+          <Dropdown style={{marginRight:20}} >
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Login
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="/Register">Register</Dropdown.Item>
+              <Dropdown.Item href="/login">Login</Dropdown.Item>
+              
+            </Dropdown.Menu>
+          </Dropdown>
+         
+          <CartHeaderButton  cart={cart} dispatch={dispatch} />
+        </Nav>
+
+      </Container>
+    </Navbar>
+  );
 };
 
-export default Header
+export default Header;

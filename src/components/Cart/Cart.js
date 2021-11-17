@@ -7,6 +7,7 @@ import CardImage from "../CardContainer/CardImage/CardImage"
 import CardTitle from "../CardContainer/CardTitle/CardTitle"
 import DeleteIcon from "./DeleteIcon";
 import CardPrice from "../CardContainer/CardPrice/CardPrice";
+import "../styles.css"
 
 
 const Cart = () => {
